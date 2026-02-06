@@ -1,0 +1,18 @@
+# OS / tooling
+.DS_Store
+Thumbs.db
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual envs
+.venv/
+env/
+venv/
+
+# Editor junk
+.idea/
+.vscode/
