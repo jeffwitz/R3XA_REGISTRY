@@ -247,20 +247,20 @@ Dans chaque JSON (réutilisable avec `validate_item` de R3XA_API) :
 
 ```
 registry/
-  imagerie/
+  imaging/
     data_sources/
       camera/
         avt_dolphin_f145b.json
     data_sets/
       dic/
         displacement_field.json
-  essais_meca/
+  mechanical_testing/
     settings/
       specimen/
         openhole_sample.json
     machines/
       tensile_frame_mts.json
-  procedes/
+  processes/
   conventions/
 scripts/
   validate_all.py

@@ -16,16 +16,16 @@ The goal is to version reference JSON fragments that can be reused across experi
 ## Repository layout (proposed)
 ```
 registry/
-  imagerie/
+  imaging/
     data_sources/
       camera/
     data_sets/
       dic/
-  essais_meca/
+  mechanical_testing/
     settings/
       specimen/
     machines/
-  procedes/
+  processes/
   conventions/
 scripts/
   validate_all.py
@@ -56,7 +56,7 @@ PY
 
 ## Next steps
 1. Populate initial items (camera AVT, specimen openhole, dataset DIC).
-2. Refine domains if needed (imagerie / essais_meca / procedes / conventions).
+2. Refine domains if needed (imaging / mechanical_testing / processes / conventions).
 3. Tag v0.1 once a minimal validated set is ready.
 
 ## License
