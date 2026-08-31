@@ -38,7 +38,7 @@ scripts/
 
 ## Validation (with `r3xa-api`)
 ```bash
-pip install r3xa-api
+python -m pip install "r3xa-api @ git+https://gitlab.com/photomechanics/R3XA_API.git@v1.5.4"
 python - <<'PY'
 from r3xa_api.registry import validate_item, load_item
 item = load_item("registry/data_sources/camera/avt_dolphin_f145b.json")

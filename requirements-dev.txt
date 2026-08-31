@@ -1,2 +1,2 @@
 pytest>=7.4
-r3xa-api>=1.0.0
+r3xa-api @ git+https://gitlab.com/photomechanics/R3XA_API.git@v1.5.4
