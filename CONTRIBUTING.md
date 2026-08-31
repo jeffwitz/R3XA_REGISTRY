@@ -28,6 +28,7 @@
 - Décrire les unités/dimensions quand pertinent.
 
 ## CI attendue
-- Un workflow GitHub Actions validera `scripts/validate_all.py` sur chaque PR.
+- Avant chaque merge request, exécuter `python scripts/validate_all.py`.
+- L’automatisation CI du projet reste à configurer.
 
 Merci !

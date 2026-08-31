@@ -277,7 +277,7 @@ scripts/
 ## 14. Automatisation
 
 - Script `scripts/validate_all.py` pour parcourir `registry/` et appeler `validate_item`.
-- GitHub Actions : `pip install r3xa-api` puis `python scripts/validate_all.py` sur chaque PR.
+- Validation locale : `pip install r3xa-api` puis `python scripts/validate_all.py` avant chaque merge request.
 
 ## 15. Prochaines étapes
 

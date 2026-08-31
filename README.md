@@ -5,7 +5,7 @@ The goal is to version reference JSON fragments that can be reused across experi
 
 ## State
 - Structure + guidelines drafted
-- CI: validation workflow ready (.github/workflows/validate.yml)
+- CI: validation can be run locally with `python scripts/validate_all.py`.
 - Needs initial items (see “Next steps”)
 
 ## Scope
