@@ -272,7 +272,7 @@ scripts/
 - `id` unique, statut renseigné, provenance renseignée.
 - `validate_item` doit passer (schema R3XA).
 - Décrire les unités/dimensions pertinentes.
-- PR acceptée après validation CI.
+- Merge request accepted after CI validation.
 
 ## 14. Automatisation
 
