@@ -3,9 +3,10 @@
   "kind": "data_sets/file",
   "title": "force time series",
   "description": "force vs time (base example migrated from R3XA_API)",
-  "folder": "data/",
-  "data_sources": ["ds_dic_pyxel_2d"],
-  "time_reference": 0.0,
+  "path": "data/",
+  "parent_data_sources": ["ds_dic_pyxel_2d"],
+  "data_type": "number",
+  "time_reference": {"kind": "unit", "title": "time_reference", "value": 0.0, "unit": "s", "scale": 1.0},
   "timestamps": {"kind": "data_set_file", "filename": "timestamps.csv", "file_type": "text/csv"},
-  "data": {"kind": "data_set_file", "filename": "force.csv", "file_type": "text/csv"}
+  "values": {"kind": "data_set_file", "filename": "force.csv", "file_type": "text/csv"}
 }

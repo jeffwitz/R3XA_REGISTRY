@@ -4,8 +4,8 @@
   "title": "graylevel images",
   "description": "images taken by the CCD camera (base example migrated from R3XA_API)",
   "path": "images/",
-  "file_type": "image/tiff",
-  "data_sources": ["ds_cam_avt_dolphin_f145b"],
+  "data_type": "image/tiff",
+  "parent_data_sources": ["ds_cam_avt_dolphin_f145b"],
   "time_reference": {
     "kind": "unit",
     "title": "time_reference",
@@ -14,5 +14,5 @@
     "scale": 1.0
   },
   "timestamps": [0.0],
-  "data": ["img_0000.tif"]
+  "values": ["img_0000.tif"]
 }
