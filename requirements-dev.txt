@@ -1,6 +1,5 @@
 pytest>=7.4
-# Tracks `develop` on purpose: the entries use `data_origin`, added in schema
-# 2026.9.17, which no published tag carries yet. Re-pin to `v2.0.0` once that
-# release is cut, so the registry is again validated against a published
-# contract.
-r3xa-api @ git+https://gitlab.com/photomechanics/R3XA_API.git@develop
+# Pin validation to the published R3XA_API release candidate and its schema
+# 2026.9.17. Update this reference deliberately when the Registry contract
+# moves to a newer API release.
+r3xa-api @ git+https://gitlab.com/photomechanics/R3XA_API.git@v2.0.0rc2

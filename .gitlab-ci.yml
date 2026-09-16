@@ -1,11 +1,8 @@
 stages:
   - test
 
-# Every registry entry is validated against the schema shipped by the R3XA_API
-# build named in requirements-dev.txt. That file currently tracks `develop`:
-# the entries use `data_origin`, which no published tag carries yet. A pinned
-# tag would be the better contract once 2.0.0 is out - until then it would only
-# prove the entries match a schema the project has already moved past.
+# Every registry entry is validated against the schema shipped by the pinned
+# R3XA_API release candidate named in requirements-dev.txt.
 validate:
   stage: test
   image: python:3.12-slim
@@ -15,7 +12,7 @@ validate:
     paths:
       - .cache/pip
   before_script:
-    # git is required: requirements-dev.txt installs R3XA_API from a git tag.
+    # git is required: requirements-dev.txt installs R3XA_API from a GitLab tag.
     - apt-get update
     - apt-get install -y --no-install-recommends git ca-certificates
     - python -m pip install --upgrade pip

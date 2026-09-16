@@ -4,44 +4,44 @@ Canonical, shareable registry of reusable R3XA building blocks (settings, data_s
 The goal is to version reference JSON fragments that can be reused across experiments and validated against the official R3XA schema.
 
 ## State
-- Structure + guidelines drafted
-- CI: validation can be run locally with `python scripts/validate_all.py`.
-- Needs initial items (see “Next steps”)
+- Five reusable reference items are currently maintained under `registry/`.
+- GitLab CI validates every JSON item against the R3XA_API schema and runs the test suite.
+- The current validation contract is R3XA_API `v2.0.0rc2` with schema `2026.9.17`.
 
 ## Scope
 - **Settings**: specimens, machines, environments, software configs.
 - **Data sources**: cameras, sensors, load frames, acquisition pipelines.
 - **Data sets**: raw / processed outputs linked to sources.
 
-## Repository layout (proposed)
+## Repository layout
 ```
 registry/
   imaging/
     data_sources/
       camera/
+      generic/
     data_sets/
-      dic/
+      list/
   mechanical_testing/
     settings/
       specimen/
-    machines/
-  processes/
-  conventions/
+    data_sets/
+      file/
 scripts/
   validate_all.py
 ```
 
 ## Naming & IDs
 - Filenames: lowercase, words separated by `_`.
-- Inside each JSON, include a stable `id` (24 lowercase letters) and a concise `title`/`description`.
+- Inside each JSON, include a stable semantic `id` with the appropriate family prefix (`stg-`, `src-`, or `set-`) and a concise `title`/`description`.
 - Keep metadata self-contained; avoid absolute paths. Use relative placeholders when paths are needed.
 
 ## Validation (with `r3xa-api`)
 ```bash
-python -m pip install "r3xa-api @ git+https://gitlab.com/photomechanics/R3XA_API.git@v2.0.0rc1"
+python -m pip install "r3xa-api @ git+https://gitlab.com/photomechanics/R3XA_API.git@v2.0.0rc2"
 python - <<'PY'
 from r3xa_api.registry import validate_item, load_item
-item = load_item("registry/data_sources/camera/avt_dolphin_f145b.json")
+item = load_item("registry/imaging/data_sources/camera/avt_dolphin_f145b.json")
 validate_item(item)  # raises if invalid
 print("ok")
 PY
@@ -55,9 +55,9 @@ PY
 - [ ] Document provenance (manufacturer, source, link) in `description` or extra fields.
 
 ## Next steps
-1. Populate initial items (camera AVT, specimen openhole, dataset DIC).
-2. Refine domains if needed (imaging / mechanical_testing / processes / conventions).
-3. Tag v0.1 once a minimal validated set is ready.
+1. Expand the validated item catalogue across imaging and mechanical-testing use cases.
+2. Refine domains and naming conventions as reusable items are contributed.
+3. Define and publish the first Registry release once the collection and governance are stable.
 
 ## License
 GPL-2.0-or-later (aligns with R3XA_API). If a different license is desired for registry data, specify before publishing.

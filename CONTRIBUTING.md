@@ -4,7 +4,7 @@
 - Python 3.9+
 - `r3xa-api` installé :
   ```bash
-  python -m pip install "r3xa-api @ git+https://gitlab.com/photomechanics/R3XA_API.git@v2.0.0rc1"
+    python -m pip install "r3xa-api @ git+https://gitlab.com/photomechanics/R3XA_API.git@v2.0.0rc2"
   ```
 
 ## Ajouter un item
@@ -22,13 +22,13 @@
 - `deprecated` : obsolète, à ne plus utiliser
 
 ## Bonnes pratiques
-- IDs stables (24 lettres minuscules).
+- IDs stables avec le préfixe correspondant à la famille (`stg-`, `src-` ou `set-`).
 - Pas de chemins absolus, pas de binaire.
 - Documenter la provenance (fabricant, lien, note).
 - Décrire les unités/dimensions quand pertinent.
 
 ## CI attendue
 - Avant chaque merge request, exécuter `python scripts/validate_all.py`.
-- L’automatisation CI du projet reste à configurer.
+- La pipeline GitLab exécute automatiquement la validation de tous les items et les tests.
 
 Merci !
