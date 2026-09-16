@@ -4,7 +4,7 @@
 - Python 3.9+
 - `r3xa-api` installé :
   ```bash
-  python -m pip install "r3xa-api @ git+https://gitlab.com/photomechanics/R3XA_API.git@d096863476462c5d03d197cee854abb4d5223844"
+  python -m pip install "r3xa-api @ git+https://gitlab.com/photomechanics/R3XA_API.git@v2.0.0rc1"
   ```
 
 ## Ajouter un item
