@@ -26,3 +26,24 @@ validate:
     - python -m pip show r3xa-api
     - python scripts/validate_all.py
     - python -m pytest -q
+
+# The job above pins a released API, so it validates against a published
+# schema. On its own it cannot notice a schema change landing on develop:
+# it stayed green through two breaking releases. This one tracks develop so
+# the break shows up here rather than at the next release.
+validate-develop:
+  stage: test
+  image: python:3.12-slim
+  allow_failure: true
+  variables:
+    R3XA_API_REF: "develop"
+  before_script:
+    - apt-get update
+    - apt-get install -y --no-install-recommends git ca-certificates
+    - python -m pip install --upgrade pip
+    - python -m pip install "git+https://gitlab.com/photomechanics/R3XA_API.git@${R3XA_API_REF}"
+    - python -m pip install "pytest>=7.4"
+  script:
+    - python -c "import r3xa_api; print('schema', r3xa_api.schema_version())"
+    - python scripts/validate_all.py
+    - python -m pytest -q

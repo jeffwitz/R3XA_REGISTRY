@@ -1,11 +1,14 @@
 {
-  "id": "dset_images_template",
+  "id": "set-camera-images",
   "kind": "data_sets/list",
   "title": "graylevel images",
   "description": "images taken by the CCD camera (base example migrated from R3XA_API)",
   "path": "images/",
   "data_type": "image/tiff",
-  "parent_data_sources": ["ds_cam_avt_dolphin_f145b"],
+  "data_origin": "raw",
+  "parent_data_sources": [
+    "src-camera-avt-dolphin-f145b"
+  ],
   "time_reference": {
     "kind": "unit",
     "title": "time_reference",
@@ -13,6 +16,10 @@
     "unit": "s",
     "scale": 1.0
   },
-  "timestamps": [0.0],
-  "values": ["img_0000.tif"]
+  "timestamps": [
+    0.0
+  ],
+  "values": [
+    "img_0000.tif"
+  ]
 }
