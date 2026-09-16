@@ -1,0 +1,28 @@
+stages:
+  - test
+
+# Every registry entry is validated against the schema shipped by the pinned
+# R3XA_API release (see requirements-dev.txt). Without this job the templates
+# could fall behind a schema change unnoticed, since nothing else in this
+# repository exercises them.
+validate:
+  stage: test
+  image: python:3.12-slim
+  variables:
+    PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+  cache:
+    paths:
+      - .cache/pip
+  before_script:
+    # git is required: requirements-dev.txt installs R3XA_API from a git tag.
+    - apt-get update
+    - apt-get install -y --no-install-recommends git ca-certificates
+    - python -m pip install --upgrade pip
+    - python -m pip install -r requirements-dev.txt
+  script:
+    # Record which R3XA_API build the entries were validated against.
+    # No pipe here: GitLab runs the script with `pipefail`, and a closed pipe
+    # would fail the job.
+    - python -m pip show r3xa-api
+    - python scripts/validate_all.py
+    - python -m pytest -q
