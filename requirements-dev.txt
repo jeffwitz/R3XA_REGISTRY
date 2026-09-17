@@ -1,5 +1,5 @@
 pytest>=7.4
 # Pin validation to the published R3XA_API release candidate and its schema
-# 2026.9.17. Update this reference deliberately when the Registry contract
+# 2026.9.18. Update this reference deliberately when the Registry contract
 # moves to a newer API release.
-r3xa-api @ git+https://gitlab.com/photomechanics/R3XA_API.git@v2.0.0rc2
+r3xa-api @ git+https://gitlab.com/photomechanics/R3XA_API.git@v2.0.0rc3

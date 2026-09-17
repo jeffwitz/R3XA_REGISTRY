@@ -6,7 +6,7 @@ The goal is to version reference JSON fragments that can be reused across experi
 ## State
 - Five reusable reference items are currently maintained under `registry/`.
 - GitLab CI validates every JSON item against the R3XA_API schema and runs the test suite.
-- The current validation contract is R3XA_API `v2.0.0rc2` with schema `2026.9.17`.
+- The current validation contract is R3XA_API `v2.0.0rc3` with schema `2026.9.18`.
 
 ## Scope
 - **Settings**: specimens, machines, environments, software configs.
@@ -38,7 +38,7 @@ scripts/
 
 ## Validation (with `r3xa-api`)
 ```bash
-python -m pip install "r3xa-api @ git+https://gitlab.com/photomechanics/R3XA_API.git@v2.0.0rc2"
+python -m pip install "r3xa-api @ git+https://gitlab.com/photomechanics/R3XA_API.git@v2.0.0rc3"
 python - <<'PY'
 from r3xa_api.registry import validate_item, load_item
 item = load_item("registry/imaging/data_sources/camera/avt_dolphin_f145b.json")
