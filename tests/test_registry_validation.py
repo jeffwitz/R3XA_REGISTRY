@@ -19,3 +19,11 @@ def test_registry_item_is_valid(path: Path):
     item = load_item(path)
     validate_item(item)
 
+
+@pytest.mark.parametrize("path", iter_json_files())
+def test_registry_item_id_uses_kind_prefix(path: Path):
+    item = load_item(path)
+    section, kind_name = item["kind"].split("/", 1)
+    prefix = {"settings": "stg", "data_sources": "src", "data_sets": "set"}[section]
+
+    assert item["id"].startswith(f"{prefix}-{kind_name}-")
