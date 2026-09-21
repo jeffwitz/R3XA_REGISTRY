@@ -27,3 +27,22 @@ def test_registry_item_id_uses_kind_prefix(path: Path):
     prefix = {"settings": "stg", "data_sources": "src", "data_sets": "set"}[section]
 
     assert item["id"].startswith(f"{prefix}-{kind_name}-")
+
+
+def test_registry_item_ids_and_titles_are_unique():
+    seen_ids: dict[str, Path] = {}
+    seen_titles: dict[str, Path] = {}
+
+    for path in iter_json_files():
+        item = load_item(path).to_dict()
+        item_id = item["id"]
+        title = item.get("title")
+        assert item_id not in seen_ids, (
+            f"duplicate registry id {item_id!r}: {path} and {seen_ids[item_id]}"
+        )
+        seen_ids[item_id] = path
+        if title:
+            assert title not in seen_titles, (
+                f"duplicate registry title {title!r}: {path} and {seen_titles[title]}"
+            )
+            seen_titles[title] = path

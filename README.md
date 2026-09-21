@@ -33,7 +33,12 @@ scripts/
 
 ## Naming & IDs
 - Filenames: lowercase, words separated by `_`.
-- Inside each JSON, include a stable semantic `id` with the appropriate family prefix (`stg-`, `src-`, or `set-`) and a concise `title`/`description`.
+- IDs follow the same convention as the WebUI: `<family>-<kind>-<semantic-name>`.
+  Use `stg-` for settings, `src-` for data sources, and `set-` for data sets;
+  for example, `src-camera-avt-dolphin-f145b` or `set-list-camera-images`.
+- IDs and titles must be unique across the registry. Keep the semantic suffix
+  stable when an item is edited or reused.
+- Inside each JSON, include a concise `title`/`description`.
 - Keep metadata self-contained; avoid absolute paths. Use relative placeholders when paths are needed.
 
 ## Validation (with `r3xa-api`)
