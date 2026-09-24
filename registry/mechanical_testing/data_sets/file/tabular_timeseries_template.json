@@ -5,7 +5,6 @@
   "description": "force vs time (base example migrated from R3XA_API)",
   "path": "data/",
   "data_type": "number",
-  "data_origin": "raw",
   "time_reference": {
     "kind": "unit",
     "title": "time_reference",
